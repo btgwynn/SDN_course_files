@@ -22,3 +22,5 @@ What things are needed to install the software and how to install them. For now,
 
 * **Your Name** - *Initial work* - [YourWebsite](https://example.com/)
 
+## OVS fake bridge resource:
+https://blog.scottlowe.org/2012/10/19/vlans-with-open-vswitch-fake-bridges/
