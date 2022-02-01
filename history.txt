@@ -1,0 +1,135 @@
+    1  exit
+    2  copy me!
+    3  cd static
+    4  mkdir training
+    5  cd training
+    6  touch example_01.txt
+    7  ls
+    8  echo Alta3
+    9  echo "I totally know how to do everything in this lab, so I am stopping here" > example_01.txt
+   10  cat example_01.txt 
+   11  echo "DING DING DINGcat example_01.txt !" >> example_01.txt
+   12  cat example_01.txt 
+   13  which nano
+   14  cd /home/student/.ssh
+   15  ssh-keygen -f id_rsa_github
+   16  cat id_rsa_github.pub
+   17  cd ~
+   18  git config --global user.name "Mona Lisa"
+   19  git config --global user.email "btgwynn@users.noreply.github.com"
+   20  git clone git@github.com:btgwynn/mycode.git
+   21  git clone git@github.com:btgwynn/SDN_course_files.git
+   22  ls
+   23  cd SDN_course_files/
+   24  ls
+   25  nano README.md 
+   26  git status
+   27  git commit -m "First commit to learn about version controlling"
+   28  git push origin
+   29  cd ~
+   30  top
+   31  tmux
+   32  exit
+   33  ssh alpha
+   34  ssh bravo
+   35  ssh charlie
+   36  ssh alpha
+   37  nano
+   38  ls
+   39  ssh brava 'bash -s' < nsadd.sh
+   40  ssh bravo 'bash -s' < nsadd.sh
+   41  nano
+   42  nano nsadd.sh 
+   43  ssh alpha 'bash -s' < nsadd.sh
+   44  ssh alpha ip netns
+   45  nano nsdel.sh
+   46  ssh alpha 'bash -s' < nsdel.sh
+   47  ssh alpha ip netns
+   48  ssh bravo 'bash -s' < nsdel.sh
+   49  ssh bravo ip netns
+   50  nano .bashrc
+   51  sudo ip netns add prompt_test
+   52  sudo ip netns exec prompt_test bash
+   53  source .bashrc
+   54  sudo ip netns exec prompt_test bash
+   55  nano
+   56  source .bashrc
+   57  nano .bashrc
+   58  nano nsadd.sh 
+   59  ssh alpha 'bash -s' < nsadd.sh 
+   60  ssh alpha ip netns
+   61  ssh alpha
+   62  sudo apt install net-tools
+   63  sudo ip link add name br0 type bridge
+   64  sudo ip addr add 172.16.2.10/24 dev br0
+   65  ifconfig
+   66  sudo ip link set br0 up
+   67  ifconfig
+   68  sudo ifconfig  br0 0
+   69  ifconfig
+   70  sudo ip addr add 172.16.2.10/24 dev br0
+   71  ip addr show
+   72  sudo ip addr add 172.16.2.13/24 dev br0
+   73  ip addr show
+   74  sudo ip addr add 172.16.2.14/24 dev br0
+   75  sudo ip addr add 172.16.2.15/24 dev br0
+   76  sudo ip addr del 172.16.2.15/24 dev br0
+   77  ip addr show
+   78  sudo ip addr del 172.16.2.14/24 dev br0
+   79  sudo ip addr del 172.16.2.13/24 dev br0
+   80  ip addr show
+   81  sudo ifconfig br0 inet6 add 2002:0db5:0:f102::1/64
+   82  ifconfig
+   83  sudo ifconfig br0 inet6 del 2002:0db5:0:fi02::1/64
+   84  sudo ifconfig br0 inet6 del 2002:0db5:0:f102::1/64
+   85  sudo ip -6 addr add 2002:0db5:0:f102::1/64 dev br0
+   86  ip -6 addr show dev br0
+   87  sudo ip -6 addr del 2002:0db5:0:f102::1/64 dev br0
+   88  sudo ip link set dev br0 address 08:00:27:75:2a:67
+   89  route -n
+   90  netstat -rn
+   91  ip route show
+   92  sudo route add -net 192.168.1.0 netmask 255.255.255.0 dev br0
+   93  ip route show
+   94  ip link show
+   95  sudo ip link set dev br0 up
+   96  sudo route del -net 192.168.1.0 netmask 255.255.255.0 dev br0
+   97  sudo ip route add 192.168.1.0/24 dev br0
+   98  man netstat
+   99  netstat -not
+  100  ss -not
+  101  arp -an
+  102  ip neigh
+  103  sudo arp -s 172.16.2.200 00:0c:29:c0:5a:ef
+  104  ip neigh
+  105  sudo arp -d 172.16.2.200
+  106  ip neigh
+  107  sudo ip neigh add 172.16.2.199 lladdr 00:0c:29:c0:5a:ef dev br0
+  108  ip neigh
+  109  sudo ip neigh del 172.16.2.199 dev br0
+  110  ip neigh
+  111  sudo cp .bashrc /root/
+  112  ip netns list
+  113  sudo ip netns exec prompt_test bash
+  114  ssh alpha
+  115  exit
+  116  ssh alpha
+  117  ls
+  118  cd SDN_course_files/
+  119  ls
+  120  nano README.md 
+  121  ifconfig
+  122  cd ..
+  123  ls
+  124  cp cleanup.sh SDN_course_files/
+  125  cp nsadd.sh SDN_course_files/
+  126  cp nsdel.sh SDN_course_files/
+  127  cp ovs-setup.sh SDN_course_files/
+  128  cp ovs-teardown.sh SDN_course_files/
+  129  cd SDN_course_files/
+  130  ls
+  131  git commit -m "some files for keeping from SDN class"
+  132  git add *
+  133  git commit -m "some files for keeping from SDN class"
+  134  git push origin
+  135  history >> history.txt
